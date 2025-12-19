@@ -183,15 +183,15 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Student management system',
+    description: 'A Student Management System is a web-based application designed to manage student records, academic details, attendance, and performance efficiently in a centralized platform.',
+    url: 'https://github.com/Akshaya-Shri/studio',
     image: porfolioImage1,
   },
   {
     title: 'Project title 4',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    url: '',
     image: porfolioImage4,
   },
   {
@@ -201,15 +201,15 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage5,
   },
   {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Event schedular app',
+    description: 'Developed an Event Scheduler App that supports event creation, scheduling, and reminders. The application demonstrates frontend development, backend integration, and efficient data handling to ensure smooth event management.',
+    url: 'https://github.com/Akshaya-Shri/studio',
     image: porfolioImage7,
   },
   {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Campus Connect',
+    description: 'CampusConnect is a social networking platform designed to connect college students, enabling them to interact, share updates, and collaborate on academic and campus activities.',
+    url: 'https://github.com/Akshaya-Shri/campusconnect',
     image: porfolioImage10,
   },
 ];
