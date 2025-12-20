@@ -300,25 +300,21 @@ export const socialLinks: Social[] = [
 export const certifications = [
   {
     platform: 'Coursera',
-    logo: '/images/certifications/coursera.png',
+    logo: '/certifications/coursera.png',
     certificates: [
       {
         title: 'Web Development',
-        pdf: '/certificates/web-development.pdf',
-      },
-      {
-        title: 'React Basics',
-        pdf: '/certificates/react-basics.pdf',
+        url: '/certificates/coursera-web.pdf',
       },
     ],
   },
   {
     platform: 'Udemy',
-    logo: '/images/certifications/udemy.png',
+    logo: '/certifications/udemy.png',
     certificates: [
       {
         title: 'Full Stack Development',
-        pdf: '/certificates/full-stack.pdf',
+        url: '/certificates/udemy-fullstack.pdf',
       },
     ],
   },

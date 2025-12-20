@@ -1,38 +1,27 @@
-// eslint-disable-next-line no-undef
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
-  // darkMode: 'media', // or 'media' or 'class'
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/data/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
-      colors: {
-        yellow: '#efc603',
-      },
       keyframes: {
-        typing: {
-          '0%, 100%': {width: '0%'},
-          '30%, 70%': {width: '100%'},
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-        blink: {
-          '0%': {
-            opacity: 0,
-          },
-        },
-        'rotate-loader': {
-          '0%': {
-            transform: 'rotate(0deg)',
-            strokeDashoffset: '360%',
-          },
-          '100%': {
-            transform: 'rotate(360deg)',
-            strokeDashoffset: '-360%',
-          },
+        scaleIn: {
+          '0%': { transform: 'scale(0.9)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
-      screens: {
-        touch: {raw: 'only screen and (pointer: coarse)'},
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-out',
+        scaleIn: 'scaleIn 0.3s ease-out',
       },
     },
   },
-  // eslint-disable-next-line no-undef
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [],
 };

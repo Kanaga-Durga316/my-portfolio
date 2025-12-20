@@ -1,41 +1,34 @@
-import {FC, memo, useState} from 'react';
+import { FC, memo, useState } from 'react';
 import Image from 'next/image';
 
-import {certifications, SectionId} from '../../data/data';
+import { certifications, SectionId } from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certifications: FC = memo(() => {
-  const [activeCert, setActiveCert] = useState<any | null>(null);
+  const [activeCert, setActiveCert] = useState<any>(null);
 
   return (
     <Section sectionId={SectionId.Certifications}>
-      <h2 className="mb-8 text-center text-2xl font-bold">
+      <h2 className="mb-10 text-center text-3xl font-extrabold text-white">
         Certifications
       </h2>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {certifications.map((cert, index) => (
-          <div
-            key={index}
+      {/* LOGOS ONLY */}
+      <div className="flex flex-wrap justify-center gap-10">
+        {certifications.map(cert => (
+          <button
+            key={cert.platform}
             onClick={() => setActiveCert(cert)}
-            className="group cursor-pointer rounded-xl bg-neutral-800 p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-neutral-700 hover:shadow-xl"
+            className="group transition-transform duration-300 hover:scale-110"
           >
-            <Image
-              src={cert.logo}
-              alt={cert.platform}
-              width={100}
-              height={100}
-              className="mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
-            />
-
-            <h3 className="font-semibold">
-              {cert.platform}
-            </h3>
-
-            <p className="mt-2 text-xs text-neutral-400">
-              Click to view certificates
-            </p>
-          </div>
+           <Image
+             src={cert.logo}
+             alt={cert.platform}
+             width={100}
+             height={100}
+             className="rounded-xl object-contain"
+           />
+          </button>
         ))}
       </div>
 
@@ -43,31 +36,32 @@ const Certifications: FC = memo(() => {
       {activeCert && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
           <div className="w-full max-w-md rounded-xl bg-neutral-900 p-6">
-            <h3 className="mb-4 text-center text-xl font-bold">
-              {activeCert.platform} Certificates
-            </h3>
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-xl font-bold text-white">
+                {activeCert.platform} Certificates
+              </h3>
+              <button
+                onClick={() => setActiveCert(null)}
+                className="text-xl text-white hover:text-red-400"
+              >
+                ✕
+              </button>
+            </div>
 
             <ul className="space-y-3">
-              {activeCert.certificates.map((item: any, i: number) => (
-                <li key={i}>
+              {activeCert.certificates.map((cert: any, index: number) => (
+                <li key={index}>
                   <a
-                    href={item.pdf}
+                    href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block rounded-lg bg-neutral-800 px-4 py-2 text-sm transition hover:bg-neutral-700 hover:text-white"
+                    className="block rounded-lg bg-neutral-800 px-4 py-2 font-semibold text-blue-400 hover:bg-neutral-700"
                   >
-                    📄 {item.title}
+                    📄 {cert.title}
                   </a>
                 </li>
               ))}
             </ul>
-
-            <button
-              onClick={() => setActiveCert(null)}
-              className="mt-6 w-full rounded-lg bg-red-600 py-2 text-sm font-semibold transition hover:bg-red-700"
-            >
-              Close
-            </button>
           </div>
         </div>
       )}
