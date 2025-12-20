@@ -17,9 +17,7 @@ import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
 import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import profilepic from '../images/profilepic.jpg';
-import courseraLogo from '../images/certifications/coursera.png';
-import udemyLogo from '../images/certifications/udemy.png';
-import nptelLogo from '../images/certifications/nptel.png';
+
 import {
   About,
   ContactSection,
@@ -299,49 +297,29 @@ export const socialLinks: Social[] = [
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/kanaga-durga-a996782a3/'},
   {label: 'Whatsapp', Icon: WhatsappIcon, href: 'https://wa.me/919965910035'},
 ];
-
 export const certifications = [
   {
     platform: 'Coursera',
-    logo: '/certifications/coursera.png',
-    list: [
-      'React Basics',
-      'Java Programming',
-      'Web Development',
-    ],
-  },
-  {
-    platform: 'Infosys Springboard',
-    logo: '/certifications/infosys.png',
-    list: [
-      'Core Java',
-      'OOPs Concepts',
-      'Database Fundamentals',
+    logo: '/images/certifications/coursera.png',
+    certificates: [
+      {
+        title: 'Web Development',
+        pdf: '/certificates/web-development.pdf',
+      },
+      {
+        title: 'React Basics',
+        pdf: '/certificates/react-basics.pdf',
+      },
     ],
   },
   {
     platform: 'Udemy',
-    logo: '/certifications/udemy.png',
-    list: [
-      'Full Stack Development',
-      'Git & GitHub',
+    logo: '/images/certifications/udemy.png',
+    certificates: [
+      {
+        title: 'Full Stack Development',
+        pdf: '/certificates/full-stack.pdf',
+      },
     ],
-  },
-];
-export const certifications = [
-  {
-    name: 'Coursera',
-    logo: courseraLogo,
-    link: 'https://www.coursera.org/account/accomplishments',
-  },
-  {
-    name: 'Udemy',
-    logo: udemyLogo,
-    link: 'https://www.udemy.com/user/',
-  },
-  {
-    name: 'NPTEL',
-    logo: nptelLogo,
-    link: 'https://nptel.ac.in/',
   },
 ];
