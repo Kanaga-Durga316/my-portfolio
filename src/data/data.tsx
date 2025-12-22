@@ -10,13 +10,12 @@ import {
 import GithubIcon from '../components/Icon/GithubIcon';
 import WhatsappIcon from '../components/Icon/WhatsappIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-
+const heroImage = '/images/certifications/header-background.webp';
+const porfolioImage1 = '/images/portfolio/portfolio-1.jpg';
+const porfolioImage4 = '/images/portfolio/portfolio-4.jpg';
+const porfolioImage5 = '/images/portfolio/portfolio-5.jpg';
+const porfolioImage7 = '/images/portfolio/portfolio-7.jpg';
+const porfolioImage10 = '/images/portfolio/portfolio-10.jpg';
 import {
   About,
   ContactSection,

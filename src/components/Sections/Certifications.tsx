@@ -7,21 +7,30 @@ import Section from '../Layout/Section';
 const Certifications: FC = memo(() => {
   const handleClick = (url: string) => {
     if (typeof window !== 'undefined') {
-      window.open(url, '_blank');
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
 
   return (
     <Section
       sectionId={SectionId.Certifications}
-      className="relative bg-cover bg-center py-20"
-      style={{
-        backgroundImage: "url('/images/certifications/certifications-bg.jpg')",
-      }}
+      className="relative py-20 overflow-hidden"
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/certifications/header-background.webp"
+          alt="Certifications Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70 -z-10" />
+
+      {/* Content */}
       <div className="relative z-10">
         <h2 className="mb-12 text-center text-3xl font-bold text-white">
           Certifications
@@ -31,34 +40,31 @@ const Certifications: FC = memo(() => {
           {certifications.map((cert, index) => (
             <div
               key={cert.platform}
-              className="group animate-scaleIn"
+              className="animate-scaleIn"
               style={{ animationDelay: `${index * 80}ms` }}
             >
-              {/* Clickable animated logo */}
-              <div
+              <button
                 onClick={() => handleClick(cert.certificates[0])}
                 className="
-                  cursor-pointer
                   rounded-full
                   p-4
                   bg-white/10
                   backdrop-blur
                   transition-all
                   duration-300
-                  group-hover:scale-110
-                  group-hover:-translate-y-2
-                  group-hover:bg-white/20
-                  group-hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]
+                  hover:scale-110
+                  hover:-translate-y-2
+                  hover:bg-white/20
                 "
+                title={cert.platform}
               >
                 <Image
                   src={cert.logo}
                   alt={cert.platform}
                   width={42}
                   height={42}
-                  className="mx-auto"
                 />
-              </div>
+              </button>
             </div>
           ))}
         </div>
