@@ -16,7 +16,6 @@ import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
 import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
 import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import profilepic from '../images/profilepic.jpg';
 
 import {
   About,
@@ -88,7 +87,6 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: profilepic,
   description: `I’m a passionate Full Stack Development student who enjoys building clean and responsive web applications. I love learning new technologies, solving problems through code, and turning ideas into real projects.`,
   aboutItems: [
     {label: 'Location', text: 'Aundipatti, Theni', Icon: MapIcon},
@@ -300,22 +298,27 @@ export const socialLinks: Social[] = [
 export const certifications = [
   {
     platform: 'Coursera',
-    logo: '/certifications/coursera.png',
-    certificates: [
-      {
-        title: 'Web Development',
-        url: '/certificates/coursera-web.pdf',
-      },
-    ],
+    logo: '/images/certifications/coursera.png',
+    certificates: ['/certificates/coursera.pdf'],
+  },
+  {
+    platform: 'Infosys',
+    logo: '/images/certifications/infosys.png',
+    certificates: ['/certificates/infosys.pdf'],
+  },
+  {
+    platform: 'NPTEL',
+    logo: '/images/certifications/nptel.png',
+    certificates: ['/certificates/nptel.pdf'],
   },
   {
     platform: 'Udemy',
-    logo: '/certifications/udemy.png',
-    certificates: [
-      {
-        title: 'Full Stack Development',
-        url: '/certificates/udemy-fullstack.pdf',
-      },
-    ],
+    logo: '/images/certifications/udemy.png',
+    certificates: ['/certificates/udemy.pdf'],
+  },
+  {
+    platform: 'Certificate',
+    logo: '/images/certifications/certificate.png',
+    certificates: ['/certificates/other.pdf'],
   },
 ];

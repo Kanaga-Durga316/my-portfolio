@@ -1,70 +1,68 @@
-import { FC, memo, useState } from 'react';
+import { FC, memo } from 'react';
 import Image from 'next/image';
 
 import { certifications, SectionId } from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certifications: FC = memo(() => {
-  const [activeCert, setActiveCert] = useState<any>(null);
+  const handleClick = (url: string) => {
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank');
+    }
+  };
 
   return (
-    <Section sectionId={SectionId.Certifications}>
-      <h2 className="mb-10 text-center text-3xl font-extrabold text-white">
-        Certifications
-      </h2>
+    <Section
+      sectionId={SectionId.Certifications}
+      className="relative bg-cover bg-center py-20"
+      style={{
+        backgroundImage: "url('/images/certifications/certifications-bg.jpg')",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70"></div>
 
-      {/* LOGOS ONLY */}
-      <div className="flex flex-wrap justify-center gap-10">
-        {certifications.map(cert => (
-          <button
-            key={cert.platform}
-            onClick={() => setActiveCert(cert)}
-            className="group transition-transform duration-300 hover:scale-110"
-          >
-           <Image
-             src={cert.logo}
-             alt={cert.platform}
-             width={100}
-             height={100}
-             className="rounded-xl object-contain"
-           />
-          </button>
-        ))}
-      </div>
+      <div className="relative z-10">
+        <h2 className="mb-12 text-center text-3xl font-bold text-white">
+          Certifications
+        </h2>
 
-      {/* MODAL */}
-      {activeCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-          <div className="w-full max-w-md rounded-xl bg-neutral-900 p-6">
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-xl font-bold text-white">
-                {activeCert.platform} Certificates
-              </h3>
-              <button
-                onClick={() => setActiveCert(null)}
-                className="text-xl text-white hover:text-red-400"
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 place-items-center">
+          {certifications.map((cert, index) => (
+            <div
+              key={cert.platform}
+              className="group animate-scaleIn"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              {/* Clickable animated logo */}
+              <div
+                onClick={() => handleClick(cert.certificates[0])}
+                className="
+                  cursor-pointer
+                  rounded-full
+                  p-4
+                  bg-white/10
+                  backdrop-blur
+                  transition-all
+                  duration-300
+                  group-hover:scale-110
+                  group-hover:-translate-y-2
+                  group-hover:bg-white/20
+                  group-hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]
+                "
               >
-                ✕
-              </button>
+                <Image
+                  src={cert.logo}
+                  alt={cert.platform}
+                  width={42}
+                  height={42}
+                  className="mx-auto"
+                />
+              </div>
             </div>
-
-            <ul className="space-y-3">
-              {activeCert.certificates.map((cert: any, index: number) => (
-                <li key={index}>
-                  <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block rounded-lg bg-neutral-800 px-4 py-2 font-semibold text-blue-400 hover:bg-neutral-700"
-                  >
-                    📄 {cert.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
     </Section>
   );
 });
