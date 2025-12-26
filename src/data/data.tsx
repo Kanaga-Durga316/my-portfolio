@@ -180,35 +180,36 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Student management system',
-    description: 'A Student Management System is a web-based application designed to manage student records, academic details, attendance, and performance efficiently in a centralized platform.',
+    description:'A Student Management System is a web-based application designed to manage student records, academic details, attendance, and performance efficiently in a centralized platform.',
     url: 'https://github.com/Akshaya-Shri/studio',
-    image: porfolioImage1,
+    image: '/images/portfolio/portfolio-1.jpg',
   },
   {
     title: 'Project title 4',
     description: 'Give a short description of your project here.',
     url: '',
-    image: porfolioImage4,
+    image: '/images/portfolio/portfolio-4.jpg',
   },
   {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
+    title: 'Online Grocery & Food Delivery E-commerce App',
+    description:'BuyBee is an all-in-one e-commerce web application combining grocery shopping, food delivery, and online retail.',
     url: 'https://reactresume.com',
-    image: porfolioImage5,
+    image: '/images/portfolio/portfolio-5.jpg',
   },
   {
-    title: 'Event schedular app',
-    description: 'Developed an Event Scheduler App that supports event creation, scheduling, and reminders. The application demonstrates frontend development, backend integration, and efficient data handling to ensure smooth event management.',
+    title: 'Event scheduler app',
+    description:'Developed an Event Scheduler App that supports event creation, scheduling, and reminders.',
     url: 'https://github.com/Akshaya-Shri/studio',
-    image: porfolioImage7,
+    image: '/images/portfolio/portfolio-7.jpg',
   },
   {
     title: 'Campus Connect',
-    description: 'CampusConnect is a social networking platform designed to connect college students, enabling them to interact, share updates, and collaborate on academic and campus activities.',
+    description:'CampusConnect is a social networking platform designed to connect college students.',
     url: 'https://github.com/Akshaya-Shri/campusconnect',
-    image: porfolioImage10,
+    image: '/images/portfolio/portfolio-10.jpg',
   },
 ];
+
 
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
