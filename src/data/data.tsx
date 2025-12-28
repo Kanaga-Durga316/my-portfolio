@@ -11,11 +11,6 @@ import GithubIcon from '../components/Icon/GithubIcon';
 import WhatsappIcon from '../components/Icon/WhatsappIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 const heroImage = '/images/certifications/header-background.webp';
-const porfolioImage1 = '/images/portfolio/portfolio-1.jpg';
-const porfolioImage4 = '/images/portfolio/portfolio-4.jpg';
-const porfolioImage5 = '/images/portfolio/portfolio-5.jpg';
-const porfolioImage7 = '/images/portfolio/portfolio-7.jpg';
-const porfolioImage10 = '/images/portfolio/portfolio-10.jpg';
 import {
   About,
   ContactSection,
@@ -182,31 +177,31 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Student management system',
     description:'A Student Management System is a web-based application designed to manage student records, academic details, attendance, and performance efficiently in a centralized platform.',
     url: 'https://github.com/Akshaya-Shri/studio',
-    image: '/images/portfolio/portfolio-1.jpg',
+    image: '/images/certifications/portfolio/portfolio-1.jpg'
   },
   {
     title: 'Project title 4',
     description: 'Give a short description of your project here.',
     url: '',
-    image: '/images/portfolio/portfolio-4.jpg',
+    image: '/images/certifications/portfolio/portfolio-4.jpg'
   },
   {
     title: 'Online Grocery & Food Delivery E-commerce App',
     description:'BuyBee is an all-in-one e-commerce web application combining grocery shopping, food delivery, and online retail.',
     url: 'https://reactresume.com',
-    image: '/images/portfolio/portfolio-5.jpg',
+    image: '/images/certifications/portfolio/portfolio-5.jpg'
   },
   {
     title: 'Event scheduler app',
     description:'Developed an Event Scheduler App that supports event creation, scheduling, and reminders.',
     url: 'https://github.com/Akshaya-Shri/studio',
-    image: '/images/portfolio/portfolio-7.jpg',
+    image: '/images/certifications/portfolio/portfolio-7.jpg'
   },
   {
     title: 'Campus Connect',
     description:'CampusConnect is a social networking platform designed to connect college students.',
     url: 'https://github.com/Akshaya-Shri/campusconnect',
-    image: '/images/portfolio/portfolio-10.jpg',
+    image: '/images/certifications/portfolio/portfolio-10.jpg'
   },
 ];
 
